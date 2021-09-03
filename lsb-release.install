@@ -1,0 +1,16 @@
+post_install() {
+  sed -e "/RebornOS release <VERSION> (ISO-Rolling)/d" -i /etc/arch-release
+  sed -e "/RebornOS Linux release/d" -i /etc/arch-release
+  echo "RebornOS Linux release" >> /etc/arch-release
+}
+
+post_upgrade() {
+  sed -e "/RebornOS release <VERSION> (ISO-Rolling)/d" -i /etc/arch-release
+  sed -e "/RebornOS Linux release/d" -i /etc/arch-release
+  echo "RebornOS Linux release" >> /etc/arch-release
+}
+
+pre_remove() {
+  sed -e "/RebornOS release <VERSION> (ISO-Rolling)/d" -i /etc/arch-release
+  sed -e "/RebornOS Linux release/d" -i /etc/arch-release
+}
